@@ -1,0 +1,4 @@
+.qmake.stash
+main.o
+NanoMagView
+Makefile
