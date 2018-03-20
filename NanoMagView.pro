@@ -13,7 +13,6 @@ SOURCES +=  $$files(src/*.cpp)
 HEADERS += $$files(include/*.hpp)
 OBJECTS_DIR = obj
 
-#INCLUDEPATH += $$PWD/VFRendering/libVFRendering.a
 LIBS += $$PWD/VFRendering/libVFRendering.a
 
 INCLUDEPATH += $$PWD/VFRendering/include
@@ -24,6 +23,8 @@ clean.commands += rm obj/*;
 unix:!macx:clean.commands += rm NanoMagView;
 macx:clean.commands += rm -rf NanoMagView.app;
 
-buildVF.commands = cd VFRendering; CC=$(CC) CXX=$(CXX) cmake ./; make
+buildVF.commands += cd VFRendering; rm -rf CMakeFiles; rm CMakeCache.txt;
+buildVF.commands += rm qhull-prefix/src/qhull-build/CMakeCache.txt;
+buildVF.commands += CC=$(CC) CXX=$(CXX) cmake ./; make
 QMAKE_EXTRA_TARGETS += buildVF clean
 # PRE_TARGETDEPS += buildVF
