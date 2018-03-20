@@ -1,4 +1,5 @@
 .qmake.stash
 main.o
 NanoMagView
+NanoMagView.app
 Makefile
