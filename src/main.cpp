@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QPushButton>
 #include <QFileDialog>
-#include <VFRendering/View.hxx>
+#include "../include/VFRenderingWidget.hpp"
 
 int main(int argc, char **argv)
 {
@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 
     // New Window inside the Application
     QWidget window;
-    window.setFixedSize(500, 250);
+    window.setFixedSize(1000, 1000);
 
     // New Button inside the window
     QPushButton *closeButton = new QPushButton("Exit", &window);
@@ -37,26 +37,35 @@ int main(int argc, char **argv)
     QStringList fileNames;
     fileNames = openDialog.selectedFiles();
 
-    // // VF Geometry
-    // auto geometry = VFRendering::Geometry::cartesianGeometry(
-    //     {30, 30, 30},
-    //     {-1.0, -1.0, -1.0},
-    //     {1.0, 1.0, 1.0}
-    // );
-    // std::vector<glm::vec3> directions;
-    // for (int iz = 0; iz < 10; iz++) {
-    //     for (int iy = 0; iy < 10; iy++) {
-    //         for (int ix = 0; ix < 10; ix++) {
-    //             // calculate direction for ix, iy, iz
-    //             directions.push_back(glm::normalize(glm::vec3(ix-4.5, iy-4.5, iz-4.5)));
-    //         }
-    //     }
-    // }
-    //
-    // // Create a VF View
-    // VFRendering::View view;
-    // view.update(geometry, directions);
-    // view.draw();
+    // Create a Surface for the rendering
+    QSurfaceFormat format;
+    format.setMajorVersion(3);
+    format.setMinorVersion(3);
+    format.setProfile(QSurfaceFormat::CoreProfile);
+    QSurfaceFormat::setDefaultFormat(format);
+    VFRenderingWidget window2;
+
+    // Generate the vector data
+    std::vector<glm::vec3> directions;
+    VFRendering::Geometry geometry = VFRendering::Geometry::cartesianGeometry({21, 21, 21}, {-20, -20, -20}, {20, 20, 20});
+    for (const auto& position : geometry.positions()) {
+        directions.push_back(glm::normalize(position));
+    }
+    window2.update(geometry, directions);
+
+    // Setup Camera
+    VFRendering::Options options;
+    options.set<VFRendering::View::Option::CAMERA_POSITION>({0, 0, 30});
+    options.set<VFRendering::View::Option::CENTER_POSITION>({0, 0, 0});
+    options.set<VFRendering::View::Option::UP_VECTOR>({0, 1, 0});
+    options.set<VFRendering::View::Option::SYSTEM_CENTER>((geometry.min() + geometry.max()) * 0.5f);
+    options.set<VFRendering::View::Option::COLORMAP_IMPLEMENTATION>(VFRendering::Utilities::getColormapImplementation(VFRendering::Utilities::Colormap::HSV));
+    window2.updateOptions(options);
+
+    // Show the surface
+    window2.resize(1000, 1000);
+    window2.setWindowTitle("VFRenderingWidgetExample");
+    window2.show();
 
     // Show the window
     window.show();

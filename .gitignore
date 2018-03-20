@@ -3,3 +3,5 @@ main.o
 NanoMagView
 NanoMagView.app
 Makefile
+obj/*
+moc/*

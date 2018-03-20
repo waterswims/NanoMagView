@@ -1,6 +1,8 @@
 TEMPLATE = app
 TARGET = NanoMagView
 
+QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.13
+
 QMAKE_CC = gcc
 QMAKE_CXX = g++
 
@@ -12,12 +14,15 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 SOURCES +=  $$files(src/*.cpp)
 HEADERS += $$files(include/*.hpp)
 OBJECTS_DIR = obj
+MOC_DIR = moc
 
 LIBS += $$PWD/VFRendering/libVFRendering.a
+LIBS += $$PWD/VFRendering/qhull-prefix/src/qhull-build/libqhullcpp.a
+LIBS += $$PWD/VFRendering/qhull-prefix/src/qhull-build/libqhullstatic_r.a
+LIBS += -ldl
 
 INCLUDEPATH += $$PWD/VFRendering/include
 INCLUDEPATH += $$PWD/VFRendering/thirdparty/glm/include
-#unix:!macx:LIBS += $$PWD/VFRendering/build/libVFRendering.so
 
 clean.commands += rm obj/*;
 unix:!macx:clean.commands += rm NanoMagView;
