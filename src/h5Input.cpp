@@ -21,8 +21,8 @@ void h5Input::getFieldTemps(
     hsize_t Tsize, Hsize;
     hid_t Hspace_id = H5Dget_space(Hset_id);
     hid_t Tspace_id = H5Dget_space(Tset_id);
-    H5Sget_simple_extent_dims(Hset_id, &Hsize, NULL);
-    H5Sget_simple_extent_dims(Tset_id, &Tsize, NULL);
+    H5Sget_simple_extent_dims(Hspace_id, &Hsize, NULL);
+    H5Sget_simple_extent_dims(Tspace_id, &Tsize, NULL);
 
     // Allocate space for the T and H arrays
     float* Hin = alloc_1darr<float>(Hsize);
