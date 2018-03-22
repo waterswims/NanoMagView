@@ -6,3 +6,5 @@ Makefile
 obj/*
 moc/*
 .DS_Store
+.ipynb_checkpoints
+*.ipynb
