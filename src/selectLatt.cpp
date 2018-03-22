@@ -76,6 +76,9 @@ void nMagWindows::selectTHWindow::openViewer()
     QSurfaceFormat::setDefaultFormat(format);
     VFRenderingWidget *viewWindow = new VFRenderingWidget;
 
+    // Try and change the renderers
+    viewWindow->renderers();
+
     // Extract the vector data
     std::vector<glm::vec3> directions;
     VFRendering::Geometry geometry;
@@ -84,9 +87,9 @@ void nMagWindows::selectTHWindow::openViewer()
 
     // Setup Camera
     VFRendering::Options options;
-    options.set<VFRendering::View::Option::CAMERA_POSITION>({0, 0, 30});
+    options.set<VFRendering::View::Option::CAMERA_POSITION>({-50, -50, 50});
     options.set<VFRendering::View::Option::CENTER_POSITION>({0, 0, 0});
-    options.set<VFRendering::View::Option::UP_VECTOR>({0, 1, 0});
+    options.set<VFRendering::View::Option::UP_VECTOR>({0, 0, 1});
     options.set<VFRendering::View::Option::SYSTEM_CENTER>((geometry.min() + geometry.max()) * 0.5f);
     options.set<VFRendering::View::Option::COLORMAP_IMPLEMENTATION>(VFRendering::Utilities::getColormapImplementation(VFRendering::Utilities::Colormap::HSV));
     viewWindow->updateOptions(options);

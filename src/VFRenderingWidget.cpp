@@ -3,6 +3,11 @@
 #include <vector>
 #include <QWheelEvent>
 
+#include <memory>
+#include <VFRendering/IsosurfaceRenderer.hxx>
+#include <VFRendering/ArrowRenderer.hxx>
+#include <VFRendering/CombinedRenderer.hxx>
+
 VFRenderingWidget::VFRenderingWidget(QWidget *parent) : QOpenGLWidget(parent) {}
 
 VFRenderingWidget::~VFRenderingWidget() {}
@@ -59,4 +64,17 @@ void VFRenderingWidget::mouseMoveEvent(QMouseEvent *event) {
     m_view.mouseMove(previous_mouse_position, current_mouse_position, movement_mode);
     ((QWidget *)this)->update();
   }
+}
+
+void VFRenderingWidget::renderers()
+{
+    auto arrow_renderer_ptr = std::make_shared<VFRendering::ArrowRenderer>(m_view);
+    auto isosurface_renderer_ptr = std::make_shared<VFRendering::IsosurfaceRenderer>(m_view);
+    isosurface_renderer_ptr->setOption<VFRendering::IsosurfaceRenderer::Option::VALUE_FUNCTION>([] (const glm::vec3& position, const glm::vec3& direction) -> VFRendering::IsosurfaceRenderer::isovalue_type {
+        (void)position;
+        return direction.z;
+    });
+    isosurface_renderer_ptr->setOption<VFRendering::IsosurfaceRenderer::Option::ISOVALUE>(0.0);
+    std::vector<std::shared_ptr<VFRendering::RendererBase>> renderers = {arrow_renderer_ptr, isosurface_renderer_ptr};
+    m_view.renderers({{std::make_shared<VFRendering::CombinedRenderer>(m_view, renderers), {{0, 0, 1, 1}}}});
 }

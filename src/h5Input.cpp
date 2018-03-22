@@ -91,25 +91,87 @@ void h5Input::getSpins(
     H5Dclose(dset_id);
     H5Fclose(file_id);
 
-    // Create the geometry
-    geometry =
-        VFRendering::Geometry::cartesianGeometry({Lsize[0], Lsize[1], Lsize[2]},
-        {-float(Lsize[0]-1)/2.0, -float(Lsize[1]-1)/2.0, -float(Lsize[2]-1)/2.0},
-        {float(Lsize[0]-1)/2.0, float(Lsize[1]-1)/2.0, float(Lsize[2]-1)/2.0});
-    directions.resize(Lsize_tot);
-
-    for(unsigned int x = 0; x < Lsize[0]; x++)
+    // Strip Array of Boundaries
+    int nXBounds = 0, nYBounds = 0, nZBounds = 0;
+    for(unsigned int i = 0; i < Lsize[0]/2; i++)
     {
-        for(unsigned int y = 0; y < Lsize[1]; y++)
+        int y = Lsize[1]/2;
+        int z = Lsize[2]/2;
+        int in_ind = 3 * (Lsize[2] * (Lsize[1] * i + y) + z);
+        if(spinsIn[in_ind]==0 && spinsIn[in_ind+1]==0 && spinsIn[in_ind+2]==0)
         {
-            for(unsigned int z = 0; z < Lsize[2]; z++)
+            nXBounds++;
+        }
+    }
+    for(unsigned int i = 0; i < Lsize[1]/2; i++)
+    {
+        int x = Lsize[0]/2;
+        int z = Lsize[2]/2;
+        int in_ind = 3 * (Lsize[2] * (Lsize[1] * x + i) + z);
+        if(spinsIn[in_ind]==0 && spinsIn[in_ind+1]==0 && spinsIn[in_ind+2]==0)
+        {
+            nYBounds++;
+        }
+    }
+    for(unsigned int i = 0; i < Lsize[2]/2; i++)
+    {
+        int x = Lsize[0]/2;
+        int y = Lsize[1]/2;
+        int in_ind = 3 * (Lsize[2] * (Lsize[1] * x + y) + i);
+        if(spinsIn[in_ind]==0 && spinsIn[in_ind+1]==0 && spinsIn[in_ind+2]==0)
+        {
+            nZBounds++;
+        }
+    }
+    hsize_t strLsize[4];
+    int strLsize_tot = 1, strTsize;
+    strLsize[0] = Lsize[0] - 2*nXBounds;
+    strLsize[1] = Lsize[1] - 2*nYBounds;
+    strLsize[2] = Lsize[2] - 2*nZBounds;
+    strLsize[3] = 3;
+    for(int i=0; i<3; i++) {strLsize_tot*=strLsize[i];}
+    strTsize = strLsize_tot * strLsize[3];
+    float* strSpinsIn = alloc_1darr<float>(strTsize);
+    for(unsigned int x = 0; x < strLsize[0]; x++)
+    {
+        int x_old = x + nXBounds;
+        for(unsigned int y = 0; y < strLsize[1]; y++)
+        {
+            int y_old = y + nYBounds;
+            for(unsigned int z = 0; z < strLsize[2]; z++)
             {
-                int out_ind, in_ind;
-                in_ind = 3 * (Lsize[2] * (Lsize[1] * x + y) + z);
-                out_ind = Lsize[0] * (Lsize[1] * z + y) + x;
-                directions[out_ind] = glm::vec3(spinsIn[in_ind],
-                    spinsIn[in_ind+1], spinsIn[in_ind+2]);
+                int z_old = z + nZBounds;
+                int in_ind = 3 * (strLsize[2] * (strLsize[1] * x + y) + z);
+                int in_ind_old = 3 * (Lsize[2] * (Lsize[1] * x_old + y_old) + z_old);
+                for(int i = 0; i < 3; i++)
+                {strSpinsIn[in_ind+i] = spinsIn[in_ind_old+i];}
             }
         }
     }
+
+    // Create the geometry
+    geometry =
+        VFRendering::Geometry::cartesianGeometry({strLsize[0], strLsize[1], strLsize[2]},
+        {-float(strLsize[0]-1)/2.0, -float(strLsize[1]-1)/2.0, -float(strLsize[2]-1)/2.0},
+        {float(strLsize[0]-1)/2.0, float(strLsize[1]-1)/2.0, float(strLsize[2]-1)/2.0});
+    directions.resize(strLsize_tot);
+
+    for(unsigned int x = 0; x < strLsize[0]; x++)
+    {
+        for(unsigned int y = 0; y < strLsize[1]; y++)
+        {
+            for(unsigned int z = 0; z < strLsize[2]; z++)
+            {
+                int out_ind, in_ind;
+                in_ind = 3 * (strLsize[2] * (strLsize[1] * x + y) + z);
+                out_ind = strLsize[0] * (strLsize[1] * z + y) + x;
+                directions[out_ind] = glm::vec3(strSpinsIn[in_ind],
+                    strSpinsIn[in_ind+1], strSpinsIn[in_ind+2]);
+            }
+        }
+    }
+
+    // Deallocate temp arrays
+    dealloc_1darr<float>(spinsIn);
+    dealloc_1darr<float>(strSpinsIn);
 }

@@ -22,6 +22,7 @@ public:
     void update(const VFRendering::Geometry& geometry, const std::vector<glm::vec3>& vectors);
     void updateVectors(const std::vector<glm::vec3>& vectors);
     void updateOptions(const VFRendering::Options& options);
+    void renderers();
     float getFramerate() const;
 
 protected:
