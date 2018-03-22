@@ -2,6 +2,7 @@
 #include <QPushButton>
 #include <QFileDialog>
 #include "../include/VFRenderingWidget.hpp"
+#include "../include/h5Input.hpp"
 
 int main(int argc, char **argv)
 {
@@ -47,10 +48,13 @@ int main(int argc, char **argv)
 
     // Generate the vector data
     std::vector<glm::vec3> directions;
-    VFRendering::Geometry geometry = VFRendering::Geometry::cartesianGeometry({21, 21, 21}, {-20, -20, -20}, {20, 20, 20});
-    for (const auto& position : geometry.positions()) {
-        directions.push_back(glm::normalize(position));
-    }
+    VFRendering::Geometry geometry;
+    h5Input::getSpins("/Users/jmw2g14/Sync/MC/NanoMagView/J_1-s_40-k_1-K_0.72-sh_c-ha_s-per_0-pr_1.h5",
+        50, 36, geometry, directions);
+    // VFRendering::Geometry geometry = VFRendering::Geometry::cartesianGeometry({21, 21, 21}, {-20, -20, -20}, {20, 20, 20});
+    // for (const auto& position : geometry.positions()) {
+    //     directions.push_back(glm::normalize(position));
+    // }
     window2.update(geometry, directions);
 
     // Setup Camera

@@ -20,9 +20,11 @@ LIBS += $$PWD/VFRendering/libVFRendering.a
 LIBS += $$PWD/VFRendering/qhull-prefix/src/qhull-build/libqhullcpp.a
 LIBS += $$PWD/VFRendering/qhull-prefix/src/qhull-build/libqhullstatic_r.a
 LIBS += -ldl
+LIBS += -lhdf5 -L$$(HDFLIB) -lz -lsz
 
 INCLUDEPATH += $$PWD/VFRendering/include
 INCLUDEPATH += $$PWD/VFRendering/thirdparty/glm/include
+INCLUDEPATH += $$(HDFINC)
 
 clean.commands += rm obj/*;
 unix:!macx:clean.commands += rm NanoMagView;

@@ -5,3 +5,4 @@ NanoMagView.app
 Makefile
 obj/*
 moc/*
+.DS_Store
