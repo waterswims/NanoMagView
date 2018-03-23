@@ -36,7 +36,8 @@ namespace h5Input
         const int Tind,
         const int Hind,
         VFRendering::Geometry &geometry,
-        std::vector<glm::vec3> &directions);
+        std::vector<glm::vec3> &directions,
+        std::vector<double> &z_pos);
 }
 
 #endif

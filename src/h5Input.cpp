@@ -58,7 +58,8 @@ void h5Input::getSpins(
     const int Tind,
     const int Hind,
     VFRendering::Geometry &geometry,
-    std::vector<glm::vec3> &directions)
+    std::vector<glm::vec3> &directions,
+    std::vector<double> &z_pos)
 {
     // Open the file
     hid_t file_id = H5Fopen(fileName.c_str(), H5F_ACC_RDONLY, H5P_DEFAULT);
@@ -154,8 +155,14 @@ void h5Input::getSpins(
         VFRendering::Geometry::cartesianGeometry({strLsize[0], strLsize[1], strLsize[2]},
         {-float(strLsize[0]-1)/2.0, -float(strLsize[1]-1)/2.0, -float(strLsize[2]-1)/2.0},
         {float(strLsize[0]-1)/2.0, float(strLsize[1]-1)/2.0, float(strLsize[2]-1)/2.0});
-    directions.resize(strLsize_tot);
 
+    z_pos.resize(strLsize[2]);
+    for(unsigned int z = 0; z < strLsize[2]; z++)
+    {
+        z_pos[z] = -(float(strLsize[0])-1)/2.0 + z;
+    }
+
+    directions.resize(strLsize_tot);
     for(unsigned int x = 0; x < strLsize[0]; x++)
     {
         for(unsigned int y = 0; y < strLsize[1]; y++)

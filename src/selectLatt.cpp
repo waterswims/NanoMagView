@@ -1,6 +1,7 @@
 #include "../include/selectLatt.hpp"
 #include "../include/h5Input.hpp"
-#include "../include/VFRenderingWidget.hpp"
+#include "../include/viewerWindow.hpp"
+#include "../include/renderOptions.hpp"
 
 nMagWindows::selectTHWindow::selectTHWindow(std::string h5NameIn)
 {
@@ -68,21 +69,24 @@ void nMagWindows::selectTHWindow::changeFieldLabel(int hInd)
 
 void nMagWindows::selectTHWindow::openViewer()
 {
+    // Extract the vector data
+    std::vector<glm::vec3> directions;
+    std::vector<double> z_pos;
+    VFRendering::Geometry geometry;
+    h5Input::getSpins(h5Name, currTInd, currHInd, geometry, directions, z_pos);
+
+    // Create an options window
+    nMagWindows::renderOptionsWindow *opts =
+        new nMagWindows::renderOptionsWindow;
+    opts->show();
+
     // Create a Surface for the rendering
     QSurfaceFormat format;
     format.setMajorVersion(3);
     format.setMinorVersion(3);
     format.setProfile(QSurfaceFormat::CoreProfile);
     QSurfaceFormat::setDefaultFormat(format);
-    VFRenderingWidget *viewWindow = new VFRenderingWidget;
-
-    // Try and change the renderers
-    viewWindow->renderers();
-
-    // Extract the vector data
-    std::vector<glm::vec3> directions;
-    VFRendering::Geometry geometry;
-    h5Input::getSpins(h5Name, currTInd, currHInd, geometry, directions);
+    viewerWindow *viewWindow = new viewerWindow(z_pos);
     viewWindow->update(geometry, directions);
 
     // Setup Camera

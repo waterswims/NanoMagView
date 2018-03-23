@@ -1,7 +1,6 @@
 #include <QApplication>
 #include <QFileDialog>
 #include <iostream>
-#include "../include/VFRenderingWidget.hpp"
 #include "../include/h5Input.hpp"
 #include "../include/selectLatt.hpp"
 
