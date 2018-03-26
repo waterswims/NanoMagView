@@ -12,9 +12,9 @@ namespace h5Input
     /// Function which extracts the fields and temperatures for which lattices
     /// exist in a specified HDF5 file.
     ///
-    /// /param fileName The name of the input HDF5 file
-    /// /param Ts A vector of floats where the temperatures will be placed
-    /// /param Hs A vector of floats where the fields will be placed
+    /// \param fileName The name of the input HDF5 file
+    /// \param Ts A vector of floats where the temperatures will be placed
+    /// \param Hs A vector of floats where the fields will be placed
     ////////////////////////////////////////////////////////////////////////////
     void getFieldTemps(
         std::string fileName,
@@ -25,11 +25,11 @@ namespace h5Input
     /// Function which extracts the spin values at a specific field and
     /// temperature
     ///
-    /// /param fileName The name of the input HDF5 file
-    /// /param Tind The index of the chosen temperature
-    /// /param Hind The index of the chosen field
-    /// /param geometry The geometry of the lattice
-    /// /param directions The directions of the spins
+    /// \param fileName The name of the input HDF5 file
+    /// \param Tind The index of the chosen temperature
+    /// \param Hind The index of the chosen field
+    /// \param geometry The geometry of the lattice
+    /// \param directions The directions of the spins
     ////////////////////////////////////////////////////////////////////////////
     void getSpins(
         std::string fileName,

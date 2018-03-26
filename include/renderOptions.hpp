@@ -29,11 +29,11 @@ namespace nMagWindows
         ////////////////////////////////////////////////////////////////////////
         /// Sends the chosen slices and iso value
         ///
-        /// /param arrOn Arrow switch
-        /// /param allOn Turn on all arrows
-        /// /param slices Slices for the arrow
-        /// /param isoOn Isosurface switch
-        /// /param isoVal Value at which isosurface is drawn
+        /// \param arrOn Arrow switch
+        /// \param allOn Turn on all arrows
+        /// \param slices Slices for the arrow
+        /// \param isoOn Isosurface switch
+        /// \param isoVal Value at which isosurface is drawn
         ////////////////////////////////////////////////////////////////////////
         void sendUpdate(bool arrOn, bool allOn, std::vector<int> slices,
             bool isoOn, double isoVal);

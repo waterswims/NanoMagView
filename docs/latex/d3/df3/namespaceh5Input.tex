@@ -21,7 +21,16 @@ void \hyperlink{namespaceh5Input_a4894a89d7f105d15e01f6c270d45b47a}{get\+Spins} 
 )}\hypertarget{namespaceh5Input_a7e2655a571daa8f456bc2a22eec1ef3d}{}\label{namespaceh5Input_a7e2655a571daa8f456bc2a22eec1ef3d}
 Function which extracts the fields and temperatures for which lattices exist in a specified H\+D\+F5 file.
 
-/param file\+Name The name of the input H\+D\+F5 file /param Ts A vector of floats where the temperatures will be placed /param Hs A vector of floats where the fields will be placed \index{h5\+Input@{h5\+Input}!get\+Spins@{get\+Spins}}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the input H\+D\+F5 file \\
+\hline
+{\em Ts} & A vector of floats where the temperatures will be placed \\
+\hline
+{\em Hs} & A vector of floats where the fields will be placed \\
+\hline
+\end{DoxyParams}
+\index{h5\+Input@{h5\+Input}!get\+Spins@{get\+Spins}}
 \index{get\+Spins@{get\+Spins}!h5\+Input@{h5\+Input}}
 \subsubsection[{\texorpdfstring{get\+Spins(std\+::string file\+Name, const int Tind, const int Hind, V\+F\+Rendering\+::\+Geometry \&geometry, std\+::vector$<$ glm\+::vec3 $>$ \&directions, std\+::vector$<$ double $>$ \&z\+\_\+pos)}{getSpins(std::string fileName, const int Tind, const int Hind, VFRendering::Geometry &geometry, std::vector< glm::vec3 > &directions, std::vector< double > &z_pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void h5\+Input\+::get\+Spins (
 \begin{DoxyParamCaption}
@@ -35,4 +44,16 @@ Function which extracts the fields and temperatures for which lattices exist in 
 )}\hypertarget{namespaceh5Input_a4894a89d7f105d15e01f6c270d45b47a}{}\label{namespaceh5Input_a4894a89d7f105d15e01f6c270d45b47a}
 Function which extracts the spin values at a specific field and temperature
 
-/param file\+Name The name of the input H\+D\+F5 file /param Tind The index of the chosen temperature /param Hind The index of the chosen field /param geometry The geometry of the lattice /param directions The directions of the spins 
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the input H\+D\+F5 file \\
+\hline
+{\em Tind} & The index of the chosen temperature \\
+\hline
+{\em Hind} & The index of the chosen field \\
+\hline
+{\em geometry} & The geometry of the lattice \\
+\hline
+{\em directions} & The directions of the spins \\
+\hline
+\end{DoxyParams}

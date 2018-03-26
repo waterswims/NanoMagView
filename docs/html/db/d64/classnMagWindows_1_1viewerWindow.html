@@ -103,15 +103,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 Inheritance diagram for nMagWindows::viewerWindow:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d95/classnMagWindows_1_1viewerWindow__inherit__graph.png" border="0" usemap="#nMagWindows_1_1viewerWindow_inherit__map" alt="Inheritance graph"/></div>
-<map name="nMagWindows_1_1viewerWindow_inherit__map" id="nMagWindows_1_1viewerWindow_inherit__map">
-</map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for nMagWindows::viewerWindow:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d51/classnMagWindows_1_1viewerWindow__coll__graph.png" border="0" usemap="#nMagWindows_1_1viewerWindow_coll__map" alt="Collaboration graph"/></div>
-<map name="nMagWindows_1_1viewerWindow_coll__map" id="nMagWindows_1_1viewerWindow_coll__map">
-</map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -119,6 +115,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a700e4bca76465101c5404ed3511af38f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d64/classnMagWindows_1_1viewerWindow.html#a700e4bca76465101c5404ed3511af38f">viewerWindow</a> (std::vector&lt; double &gt; slice_pos_in, const bool arrowOn, const bool allArrow, const std::vector&lt; int &gt; slices, const bool isoOn, const double isoVal, QWidget *parent=nullptr)</td></tr>
 <tr class="separator:a700e4bca76465101c5404ed3511af38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc66dbe51c1fd662eafcb14466382655"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d64/classnMagWindows_1_1viewerWindow.html#abc66dbe51c1fd662eafcb14466382655">~viewerWindow</a> ()</td></tr>
+<tr class="memdesc:abc66dbe51c1fd662eafcb14466382655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#abc66dbe51c1fd662eafcb14466382655">More...</a><br /></td></tr>
 <tr class="separator:abc66dbe51c1fd662eafcb14466382655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91e38c0e40f40aa4219c7b9bccfdca21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d64/classnMagWindows_1_1viewerWindow.html#a91e38c0e40f40aa4219c7b9bccfdca21">update</a> (const VFRendering::Geometry &amp;geometry, const std::vector&lt; glm::vec3 &gt; &amp;vectors)</td></tr>
 <tr class="separator:a91e38c0e40f40aa4219c7b9bccfdca21"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,6 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9336f6f66088169a5a4ce979755427ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d64/classnMagWindows_1_1viewerWindow.html#a9336f6f66088169a5a4ce979755427ba">set_renderers</a> (const bool arrowOn, const bool allArrow, const std::vector&lt; int &gt; slices, const bool isoOn, const double isoVal)</td></tr>
 <tr class="separator:a9336f6f66088169a5a4ce979755427ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d1bdb9fd44982e2f82716a70bc5fb05"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d64/classnMagWindows_1_1viewerWindow.html#a8d1bdb9fd44982e2f82716a70bc5fb05">getFramerate</a> () const </td></tr>
+<tr class="memdesc:a8d1bdb9fd44982e2f82716a70bc5fb05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the framerate of the window.  <a href="#a8d1bdb9fd44982e2f82716a70bc5fb05">More...</a><br /></td></tr>
 <tr class="separator:a8d1bdb9fd44982e2f82716a70bc5fb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -200,6 +198,19 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice_pos_in</td><td>The locations of each slice in real space </td></tr>
+    <tr><td class="paramname">arrowOn</td><td>Are spin arros on? </td></tr>
+    <tr><td class="paramname">allArrow</td><td>Are all spin arrows on? </td></tr>
+    <tr><td class="paramname">slices</td><td>Which slices of spin arrows should be shown? </td></tr>
+    <tr><td class="paramname">isoOn</td><td>Are isosurfaces on? </td></tr>
+    <tr><td class="paramname">isoVal</td><td>What is the value of the isosurfaces? </td></tr>
+    <tr><td class="paramname">parent</td><td>The parent of this object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -224,6 +235,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Destructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -239,6 +252,8 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the framerate of the window. </p>
 
 </div>
 </div>
@@ -411,6 +426,17 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Setup the renderers based on input from options window</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arrowOn</td><td>Are spin arros on? </td></tr>
+    <tr><td class="paramname">allArrow</td><td>Are all spin arrows on? </td></tr>
+    <tr><td class="paramname">slices</td><td>Which slices of spin arrows should be shown? </td></tr>
+    <tr><td class="paramname">isoOn</td><td>Are isosurfaces on? </td></tr>
+    <tr><td class="paramname">isoVal</td><td>What is the value of the isosurfaces? </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -437,6 +463,14 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Update the vector field data</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">geometry</td><td>The positions of the sites </td></tr>
+    <tr><td class="paramname">vectors</td><td>The vectors associated with the geometry </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -453,6 +487,13 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Update the viewer options</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">options</td><td>The viewer options </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -469,6 +510,13 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Update the vector field data</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vectors</td><td>The vectors associated with the geometry </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -6,8 +6,7 @@
 
 
 
-Inheritance diagram for n\+Mag\+Windows\+:\+:viewer\+Window\+:
-\nopagebreak
+Inheritance diagram for n\+Mag\+Windows\+:\+:viewer\+Window\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@ Inheritance diagram for n\+Mag\+Windows\+:\+:viewer\+Window\+:
 \end{figure}
 
 
-Collaboration diagram for n\+Mag\+Windows\+:\+:viewer\+Window\+:
-\nopagebreak
+Collaboration diagram for n\+Mag\+Windows\+:\+:viewer\+Window\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,7 +28,7 @@ Collaboration diagram for n\+Mag\+Windows\+:\+:viewer\+Window\+:
 \hyperlink{classnMagWindows_1_1viewerWindow_a700e4bca76465101c5404ed3511af38f}{viewer\+Window} (std\+::vector$<$ double $>$ slice\+\_\+pos\+\_\+in, const bool arrow\+On, const bool all\+Arrow, const std\+::vector$<$ int $>$ slices, const bool iso\+On, const double iso\+Val, Q\+Widget $\ast$parent=nullptr)
 \item 
 virtual \hyperlink{classnMagWindows_1_1viewerWindow_abc66dbe51c1fd662eafcb14466382655}{$\sim$viewer\+Window} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classnMagWindows_1_1viewerWindow_a91e38c0e40f40aa4219c7b9bccfdca21}{update} (const V\+F\+Rendering\+::\+Geometry \&geometry, const std\+::vector$<$ glm\+::vec3 $>$ \&vectors)
 \item 
 void \hyperlink{classnMagWindows_1_1viewerWindow_aa93ecd1a2bc515804cc5780902111206}{update\+Vectors} (const std\+::vector$<$ glm\+::vec3 $>$ \&vectors)
@@ -40,7 +38,7 @@ void \hyperlink{classnMagWindows_1_1viewerWindow_ad3c57658a50c31f5680ca0149f4ed7
 void \hyperlink{classnMagWindows_1_1viewerWindow_a9336f6f66088169a5a4ce979755427ba}{set\+\_\+renderers} (const bool arrow\+On, const bool all\+Arrow, const std\+::vector$<$ int $>$ slices, const bool iso\+On, const double iso\+Val)
 \item 
 float \hyperlink{classnMagWindows_1_1viewerWindow_a8d1bdb9fd44982e2f82716a70bc5fb05}{get\+Framerate} () const 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the framerate of the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -72,6 +70,25 @@ void \hyperlink{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395
 \item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
 \end{DoxyParamCaption}
 )}\hypertarget{classnMagWindows_1_1viewerWindow_a700e4bca76465101c5404ed3511af38f}{}\label{classnMagWindows_1_1viewerWindow_a700e4bca76465101c5404ed3511af38f}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice\+\_\+pos\+\_\+in} & The locations of each slice in real space \\
+\hline
+{\em arrow\+On} & Are spin arros on? \\
+\hline
+{\em all\+Arrow} & Are all spin arrows on? \\
+\hline
+{\em slices} & Which slices of spin arrows should be shown? \\
+\hline
+{\em iso\+On} & Are isosurfaces on? \\
+\hline
+{\em iso\+Val} & What is the value of the isosurfaces? \\
+\hline
+{\em parent} & The parent of this object. \\
+\hline
+\end{DoxyParams}
 \index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!````~viewer\+Window@{$\sim$viewer\+Window}}
 \index{````~viewer\+Window@{$\sim$viewer\+Window}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
 \subsubsection[{\texorpdfstring{$\sim$viewer\+Window()}{~viewerWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual n\+Mag\+Windows\+::viewer\+Window\+::$\sim$viewer\+Window (
@@ -79,6 +96,10 @@ void \hyperlink{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classnMagWindows_1_1viewerWindow_abc66dbe51c1fd662eafcb14466382655}{}\label{classnMagWindows_1_1viewerWindow_abc66dbe51c1fd662eafcb14466382655}
+
+
+Destructor. 
+
 
 
 \subsection{Member Function Documentation}
@@ -89,6 +110,10 @@ void \hyperlink{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classnMagWindows_1_1viewerWindow_a8d1bdb9fd44982e2f82716a70bc5fb05}{}\label{classnMagWindows_1_1viewerWindow_a8d1bdb9fd44982e2f82716a70bc5fb05}
+
+
+Get the framerate of the window. 
+
 \index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!initialize\+GL@{initialize\+GL}}
 \index{initialize\+GL@{initialize\+GL}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
 \subsubsection[{\texorpdfstring{initialize\+G\+L() override}{initializeGL() override}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::initialize\+GL (
@@ -136,6 +161,21 @@ void \hyperlink{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395
 \item[{const double}]{iso\+Val}
 \end{DoxyParamCaption}
 )}\hypertarget{classnMagWindows_1_1viewerWindow_a9336f6f66088169a5a4ce979755427ba}{}\label{classnMagWindows_1_1viewerWindow_a9336f6f66088169a5a4ce979755427ba}
+Setup the renderers based on input from options window
+
+
+\begin{DoxyParams}{Parameters}
+{\em arrow\+On} & Are spin arros on? \\
+\hline
+{\em all\+Arrow} & Are all spin arrows on? \\
+\hline
+{\em slices} & Which slices of spin arrows should be shown? \\
+\hline
+{\em iso\+On} & Are isosurfaces on? \\
+\hline
+{\em iso\+Val} & What is the value of the isosurfaces? \\
+\hline
+\end{DoxyParams}
 \index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!update@{update}}
 \index{update@{update}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
 \subsubsection[{\texorpdfstring{update(const V\+F\+Rendering\+::\+Geometry \&geometry, const std\+::vector$<$ glm\+::vec3 $>$ \&vectors)}{update(const VFRendering::Geometry &geometry, const std::vector< glm::vec3 > &vectors)}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::update (
@@ -144,6 +184,15 @@ void \hyperlink{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395
 \item[{const std\+::vector$<$ glm\+::vec3 $>$ \&}]{vectors}
 \end{DoxyParamCaption}
 )}\hypertarget{classnMagWindows_1_1viewerWindow_a91e38c0e40f40aa4219c7b9bccfdca21}{}\label{classnMagWindows_1_1viewerWindow_a91e38c0e40f40aa4219c7b9bccfdca21}
+Update the vector field data
+
+
+\begin{DoxyParams}{Parameters}
+{\em geometry} & The positions of the sites \\
+\hline
+{\em vectors} & The vectors associated with the geometry \\
+\hline
+\end{DoxyParams}
 \index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!update\+Options@{update\+Options}}
 \index{update\+Options@{update\+Options}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
 \subsubsection[{\texorpdfstring{update\+Options(const V\+F\+Rendering\+::\+Options \&options)}{updateOptions(const VFRendering::Options &options)}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::update\+Options (
@@ -151,6 +200,13 @@ void \hyperlink{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395
 \item[{const V\+F\+Rendering\+::\+Options \&}]{options}
 \end{DoxyParamCaption}
 )}\hypertarget{classnMagWindows_1_1viewerWindow_ad3c57658a50c31f5680ca0149f4ed700}{}\label{classnMagWindows_1_1viewerWindow_ad3c57658a50c31f5680ca0149f4ed700}
+Update the viewer options
+
+
+\begin{DoxyParams}{Parameters}
+{\em options} & The viewer options \\
+\hline
+\end{DoxyParams}
 \index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!update\+Vectors@{update\+Vectors}}
 \index{update\+Vectors@{update\+Vectors}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
 \subsubsection[{\texorpdfstring{update\+Vectors(const std\+::vector$<$ glm\+::vec3 $>$ \&vectors)}{updateVectors(const std::vector< glm::vec3 > &vectors)}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::update\+Vectors (
@@ -158,6 +214,13 @@ void \hyperlink{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395
 \item[{const std\+::vector$<$ glm\+::vec3 $>$ \&}]{vectors}
 \end{DoxyParamCaption}
 )}\hypertarget{classnMagWindows_1_1viewerWindow_aa93ecd1a2bc515804cc5780902111206}{}\label{classnMagWindows_1_1viewerWindow_aa93ecd1a2bc515804cc5780902111206}
+Update the vector field data
+
+
+\begin{DoxyParams}{Parameters}
+{\em vectors} & The vectors associated with the geometry \\
+\hline
+\end{DoxyParams}
 \index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!wheel\+Event@{wheel\+Event}}
 \index{wheel\+Event@{wheel\+Event}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
 \subsubsection[{\texorpdfstring{wheel\+Event(\+Q\+Wheel\+Event $\ast$event) override}{wheelEvent(QWheelEvent *event) override}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::wheel\+Event (

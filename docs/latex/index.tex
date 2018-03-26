@@ -1,0 +1,44 @@
+Simple Application to View Output Files from Nano\+Mag\+MC
+
+\subsection*{Requirements}
+
+
+\begin{DoxyItemize}
+\item Qt (tested using 5.\+10.\+1)
+\item Open\+GL libs
+\item H\+D\+F5 libs
+\end{DoxyItemize}
+
+\subsection*{Installation}
+
+
+\begin{DoxyItemize}
+\item Clone the directory and \hyperlink{namespaceVFRendering}{V\+F\+Rendering} submodule using\+:
+\end{DoxyItemize}
+
+{\ttfamily git clone -\/-\/recursive \href{https://github.com/waterswims/NanoMagView.git}{\tt https\+://github.\+com/waterswims/\+Nano\+Mag\+View.\+git}}
+
+
+\begin{DoxyItemize}
+\item Generate the makefile using\+:
+\end{DoxyItemize}
+
+{\ttfamily qmake Nano\+Mag\+View.\+pro}
+
+
+\begin{DoxyItemize}
+\item Build the \hyperlink{namespaceVFRendering}{V\+F\+Rendering} library using\+:
+\end{DoxyItemize}
+
+{\ttfamily make build\+VF}
+
+
+\begin{DoxyItemize}
+\item Build the application using\+:
+\end{DoxyItemize}
+
+{\ttfamily make}
+
+\subsection*{Acknowledgements}
+
+This project used the \hyperlink{namespaceVFRendering}{V\+F\+Rendering} library which can be found at \href{https://github.com/spirit-code/VFRendering}{\tt https\+://github.\+com/spirit-\/code/\+V\+F\+Rendering} 
