@@ -1,0 +1,172 @@
+\hypertarget{classnMagWindows_1_1viewerWindow}{}\section{n\+Mag\+Windows\+:\+:viewer\+Window Class Reference}
+\label{classnMagWindows_1_1viewerWindow}\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+
+
+{\ttfamily \#include $<$viewer\+Window.\+hpp$>$}
+
+
+
+Inheritance diagram for n\+Mag\+Windows\+:\+:viewer\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{d0/d95/classnMagWindows_1_1viewerWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for n\+Mag\+Windows\+:\+:viewer\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{d8/d51/classnMagWindows_1_1viewerWindow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnMagWindows_1_1viewerWindow_a700e4bca76465101c5404ed3511af38f}{viewer\+Window} (std\+::vector$<$ double $>$ slice\+\_\+pos\+\_\+in, const bool arrow\+On, const bool all\+Arrow, const std\+::vector$<$ int $>$ slices, const bool iso\+On, const double iso\+Val, Q\+Widget $\ast$parent=nullptr)
+\item 
+virtual \hyperlink{classnMagWindows_1_1viewerWindow_abc66dbe51c1fd662eafcb14466382655}{$\sim$viewer\+Window} ()
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_a91e38c0e40f40aa4219c7b9bccfdca21}{update} (const V\+F\+Rendering\+::\+Geometry \&geometry, const std\+::vector$<$ glm\+::vec3 $>$ \&vectors)
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_aa93ecd1a2bc515804cc5780902111206}{update\+Vectors} (const std\+::vector$<$ glm\+::vec3 $>$ \&vectors)
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_ad3c57658a50c31f5680ca0149f4ed700}{update\+Options} (const V\+F\+Rendering\+::\+Options \&options)
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_a9336f6f66088169a5a4ce979755427ba}{set\+\_\+renderers} (const bool arrow\+On, const bool all\+Arrow, const std\+::vector$<$ int $>$ slices, const bool iso\+On, const double iso\+Val)
+\item 
+float \hyperlink{classnMagWindows_1_1viewerWindow_a8d1bdb9fd44982e2f82716a70bc5fb05}{get\+Framerate} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_a38e32a190bcd85e1a78fbf13c2e5bf2f}{initialize\+GL} () override
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_affcbcf6e86f76f64d4492372ebcc0aca}{resize\+GL} (int width, int height) override
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_a4dc51c39e4bb00f9622efb4a2683ce94}{paint\+GL} () override
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_a5ec1c19ffa3287dfece38f7db63c80ec}{wheel\+Event} (Q\+Wheel\+Event $\ast$event) override
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_ab10703ac3a707a6b813862255b606b51}{mouse\+Press\+Event} (Q\+Mouse\+Event $\ast$event) override
+\item 
+void \hyperlink{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395d7}{mouse\+Move\+Event} (Q\+Mouse\+Event $\ast$event) override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!viewer\+Window@{viewer\+Window}}
+\index{viewer\+Window@{viewer\+Window}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{viewer\+Window(std\+::vector$<$ double $>$ slice\+\_\+pos\+\_\+in, const bool arrow\+On, const bool all\+Arrow, const std\+::vector$<$ int $>$ slices, const bool iso\+On, const double iso\+Val, Q\+Widget $\ast$parent=nullptr)}{viewerWindow(std::vector< double > slice_pos_in, const bool arrowOn, const bool allArrow, const std::vector< int > slices, const bool isoOn, const double isoVal, QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}n\+Mag\+Windows\+::viewer\+Window\+::viewer\+Window (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{slice\+\_\+pos\+\_\+in, }
+\item[{const bool}]{arrow\+On, }
+\item[{const bool}]{all\+Arrow, }
+\item[{const std\+::vector$<$ int $>$}]{slices, }
+\item[{const bool}]{iso\+On, }
+\item[{const double}]{iso\+Val, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{classnMagWindows_1_1viewerWindow_a700e4bca76465101c5404ed3511af38f}{}\label{classnMagWindows_1_1viewerWindow_a700e4bca76465101c5404ed3511af38f}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!````~viewer\+Window@{$\sim$viewer\+Window}}
+\index{````~viewer\+Window@{$\sim$viewer\+Window}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{$\sim$viewer\+Window()}{~viewerWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual n\+Mag\+Windows\+::viewer\+Window\+::$\sim$viewer\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classnMagWindows_1_1viewerWindow_abc66dbe51c1fd662eafcb14466382655}{}\label{classnMagWindows_1_1viewerWindow_abc66dbe51c1fd662eafcb14466382655}
+
+
+\subsection{Member Function Documentation}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!get\+Framerate@{get\+Framerate}}
+\index{get\+Framerate@{get\+Framerate}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{get\+Framerate() const }{getFramerate() const }}]{\setlength{\rightskip}{0pt plus 5cm}float n\+Mag\+Windows\+::viewer\+Window\+::get\+Framerate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classnMagWindows_1_1viewerWindow_a8d1bdb9fd44982e2f82716a70bc5fb05}{}\label{classnMagWindows_1_1viewerWindow_a8d1bdb9fd44982e2f82716a70bc5fb05}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!initialize\+GL@{initialize\+GL}}
+\index{initialize\+GL@{initialize\+GL}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{initialize\+G\+L() override}{initializeGL() override}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::initialize\+GL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classnMagWindows_1_1viewerWindow_a38e32a190bcd85e1a78fbf13c2e5bf2f}{}\label{classnMagWindows_1_1viewerWindow_a38e32a190bcd85e1a78fbf13c2e5bf2f}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{mouse\+Move\+Event(\+Q\+Mouse\+Event $\ast$event) override}{mouseMoveEvent(QMouseEvent *event) override}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::mouse\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395d7}{}\label{classnMagWindows_1_1viewerWindow_ae844f52b23024f772a8175aa1fa395d7}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{mouse\+Press\+Event(\+Q\+Mouse\+Event $\ast$event) override}{mousePressEvent(QMouseEvent *event) override}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classnMagWindows_1_1viewerWindow_ab10703ac3a707a6b813862255b606b51}{}\label{classnMagWindows_1_1viewerWindow_ab10703ac3a707a6b813862255b606b51}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!paint\+GL@{paint\+GL}}
+\index{paint\+GL@{paint\+GL}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{paint\+G\+L() override}{paintGL() override}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::paint\+GL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classnMagWindows_1_1viewerWindow_a4dc51c39e4bb00f9622efb4a2683ce94}{}\label{classnMagWindows_1_1viewerWindow_a4dc51c39e4bb00f9622efb4a2683ce94}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!resize\+GL@{resize\+GL}}
+\index{resize\+GL@{resize\+GL}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{resize\+G\+L(int width, int height) override}{resizeGL(int width, int height) override}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::resize\+GL (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classnMagWindows_1_1viewerWindow_affcbcf6e86f76f64d4492372ebcc0aca}{}\label{classnMagWindows_1_1viewerWindow_affcbcf6e86f76f64d4492372ebcc0aca}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!set\+\_\+renderers@{set\+\_\+renderers}}
+\index{set\+\_\+renderers@{set\+\_\+renderers}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{set\+\_\+renderers(const bool arrow\+On, const bool all\+Arrow, const std\+::vector$<$ int $>$ slices, const bool iso\+On, const double iso\+Val)}{set_renderers(const bool arrowOn, const bool allArrow, const std::vector< int > slices, const bool isoOn, const double isoVal)}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::set\+\_\+renderers (
+\begin{DoxyParamCaption}
+\item[{const bool}]{arrow\+On, }
+\item[{const bool}]{all\+Arrow, }
+\item[{const std\+::vector$<$ int $>$}]{slices, }
+\item[{const bool}]{iso\+On, }
+\item[{const double}]{iso\+Val}
+\end{DoxyParamCaption}
+)}\hypertarget{classnMagWindows_1_1viewerWindow_a9336f6f66088169a5a4ce979755427ba}{}\label{classnMagWindows_1_1viewerWindow_a9336f6f66088169a5a4ce979755427ba}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!update@{update}}
+\index{update@{update}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{update(const V\+F\+Rendering\+::\+Geometry \&geometry, const std\+::vector$<$ glm\+::vec3 $>$ \&vectors)}{update(const VFRendering::Geometry &geometry, const std::vector< glm::vec3 > &vectors)}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::update (
+\begin{DoxyParamCaption}
+\item[{const V\+F\+Rendering\+::\+Geometry \&}]{geometry, }
+\item[{const std\+::vector$<$ glm\+::vec3 $>$ \&}]{vectors}
+\end{DoxyParamCaption}
+)}\hypertarget{classnMagWindows_1_1viewerWindow_a91e38c0e40f40aa4219c7b9bccfdca21}{}\label{classnMagWindows_1_1viewerWindow_a91e38c0e40f40aa4219c7b9bccfdca21}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!update\+Options@{update\+Options}}
+\index{update\+Options@{update\+Options}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{update\+Options(const V\+F\+Rendering\+::\+Options \&options)}{updateOptions(const VFRendering::Options &options)}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::update\+Options (
+\begin{DoxyParamCaption}
+\item[{const V\+F\+Rendering\+::\+Options \&}]{options}
+\end{DoxyParamCaption}
+)}\hypertarget{classnMagWindows_1_1viewerWindow_ad3c57658a50c31f5680ca0149f4ed700}{}\label{classnMagWindows_1_1viewerWindow_ad3c57658a50c31f5680ca0149f4ed700}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!update\+Vectors@{update\+Vectors}}
+\index{update\+Vectors@{update\+Vectors}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{update\+Vectors(const std\+::vector$<$ glm\+::vec3 $>$ \&vectors)}{updateVectors(const std::vector< glm::vec3 > &vectors)}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::update\+Vectors (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ glm\+::vec3 $>$ \&}]{vectors}
+\end{DoxyParamCaption}
+)}\hypertarget{classnMagWindows_1_1viewerWindow_aa93ecd1a2bc515804cc5780902111206}{}\label{classnMagWindows_1_1viewerWindow_aa93ecd1a2bc515804cc5780902111206}
+\index{n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}!wheel\+Event@{wheel\+Event}}
+\index{wheel\+Event@{wheel\+Event}!n\+Mag\+Windows\+::viewer\+Window@{n\+Mag\+Windows\+::viewer\+Window}}
+\subsubsection[{\texorpdfstring{wheel\+Event(\+Q\+Wheel\+Event $\ast$event) override}{wheelEvent(QWheelEvent *event) override}}]{\setlength{\rightskip}{0pt plus 5cm}void n\+Mag\+Windows\+::viewer\+Window\+::wheel\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Wheel\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classnMagWindows_1_1viewerWindow_a5ec1c19ffa3287dfece38f7db63c80ec}{}\label{classnMagWindows_1_1viewerWindow_a5ec1c19ffa3287dfece38f7db63c80ec}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{viewerWindow_8hpp}{viewer\+Window.\+hpp}\end{DoxyCompactItemize}

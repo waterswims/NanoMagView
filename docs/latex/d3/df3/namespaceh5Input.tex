@@ -1,0 +1,38 @@
+\hypertarget{namespaceh5Input}{}\section{h5\+Input Namespace Reference}
+\label{namespaceh5Input}\index{h5\+Input@{h5\+Input}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceh5Input_a7e2655a571daa8f456bc2a22eec1ef3d}{get\+Field\+Temps} (std\+::string file\+Name, std\+::vector$<$ float $>$ \&Ts, std\+::vector$<$ float $>$ \&Hs)
+\item 
+void \hyperlink{namespaceh5Input_a4894a89d7f105d15e01f6c270d45b47a}{get\+Spins} (std\+::string file\+Name, const int Tind, const int Hind, V\+F\+Rendering\+::\+Geometry \&geometry, std\+::vector$<$ glm\+::vec3 $>$ \&directions, std\+::vector$<$ double $>$ \&z\+\_\+pos)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{h5\+Input@{h5\+Input}!get\+Field\+Temps@{get\+Field\+Temps}}
+\index{get\+Field\+Temps@{get\+Field\+Temps}!h5\+Input@{h5\+Input}}
+\subsubsection[{\texorpdfstring{get\+Field\+Temps(std\+::string file\+Name, std\+::vector$<$ float $>$ \&\+Ts, std\+::vector$<$ float $>$ \&\+Hs)}{getFieldTemps(std::string fileName, std::vector< float > &Ts, std::vector< float > &Hs)}}]{\setlength{\rightskip}{0pt plus 5cm}void h5\+Input\+::get\+Field\+Temps (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+Name, }
+\item[{std\+::vector$<$ float $>$ \&}]{Ts, }
+\item[{std\+::vector$<$ float $>$ \&}]{Hs}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceh5Input_a7e2655a571daa8f456bc2a22eec1ef3d}{}\label{namespaceh5Input_a7e2655a571daa8f456bc2a22eec1ef3d}
+Function which extracts the fields and temperatures for which lattices exist in a specified H\+D\+F5 file.
+
+/param file\+Name The name of the input H\+D\+F5 file /param Ts A vector of floats where the temperatures will be placed /param Hs A vector of floats where the fields will be placed \index{h5\+Input@{h5\+Input}!get\+Spins@{get\+Spins}}
+\index{get\+Spins@{get\+Spins}!h5\+Input@{h5\+Input}}
+\subsubsection[{\texorpdfstring{get\+Spins(std\+::string file\+Name, const int Tind, const int Hind, V\+F\+Rendering\+::\+Geometry \&geometry, std\+::vector$<$ glm\+::vec3 $>$ \&directions, std\+::vector$<$ double $>$ \&z\+\_\+pos)}{getSpins(std::string fileName, const int Tind, const int Hind, VFRendering::Geometry &geometry, std::vector< glm::vec3 > &directions, std::vector< double > &z_pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void h5\+Input\+::get\+Spins (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+Name, }
+\item[{const int}]{Tind, }
+\item[{const int}]{Hind, }
+\item[{V\+F\+Rendering\+::\+Geometry \&}]{geometry, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{directions, }
+\item[{std\+::vector$<$ double $>$ \&}]{z\+\_\+pos}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceh5Input_a4894a89d7f105d15e01f6c270d45b47a}{}\label{namespaceh5Input_a4894a89d7f105d15e01f6c270d45b47a}
+Function which extracts the spin values at a specific field and temperature
+
+/param file\+Name The name of the input H\+D\+F5 file /param Tind The index of the chosen temperature /param Hind The index of the chosen field /param geometry The geometry of the lattice /param directions The directions of the spins 
