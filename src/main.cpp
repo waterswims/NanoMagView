@@ -24,8 +24,6 @@ int main(int argc, char **argv)
 
         std::string fileName = fileNames.at(0).toLocal8Bit().constData();
 
-        std::cout << fileName << std::endl;
-
         // Create the slider window
         sWindow = new nMagWindows::selectTHWindow(fileName);
         sWindow->show();

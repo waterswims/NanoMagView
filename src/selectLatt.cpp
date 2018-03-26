@@ -1,7 +1,6 @@
 #include "../include/selectLatt.hpp"
 #include "../include/h5Input.hpp"
-#include "../include/viewerWindow.hpp"
-#include "../include/renderOptions.hpp"
+#include "../include/viewerInstance.hpp"
 
 nMagWindows::selectTHWindow::selectTHWindow(std::string h5NameIn)
 {
@@ -69,39 +68,7 @@ void nMagWindows::selectTHWindow::changeFieldLabel(int hInd)
 
 void nMagWindows::selectTHWindow::openViewer()
 {
-    // Extract the vector data
-    std::vector<glm::vec3> directions;
-    std::vector<double> z_pos;
-    VFRendering::Geometry geometry;
-    h5Input::getSpins(h5Name, currTInd, currHInd, geometry, directions, z_pos);
-
-    // Create an options window
-    nMagWindows::renderOptionsWindow *opts =
-        new nMagWindows::renderOptionsWindow;
-    opts->show();
-
-    // Create a Surface for the rendering
-    QSurfaceFormat format;
-    format.setMajorVersion(3);
-    format.setMinorVersion(3);
-    format.setProfile(QSurfaceFormat::CoreProfile);
-    QSurfaceFormat::setDefaultFormat(format);
-    viewerWindow *viewWindow = new viewerWindow(z_pos);
-    viewWindow->update(geometry, directions);
-
-    // Setup Camera
-    VFRendering::Options options;
-    options.set<VFRendering::View::Option::CAMERA_POSITION>({-50, -50, 50});
-    options.set<VFRendering::View::Option::CENTER_POSITION>({0, 0, 0});
-    options.set<VFRendering::View::Option::UP_VECTOR>({0, 0, 1});
-    options.set<VFRendering::View::Option::SYSTEM_CENTER>((geometry.min() + geometry.max()) * 0.5f);
-    options.set<VFRendering::View::Option::COLORMAP_IMPLEMENTATION>(VFRendering::Utilities::getColormapImplementation(VFRendering::Utilities::Colormap::HSV));
-    viewWindow->updateOptions(options);
-
-    // Show the surface
-    viewWindow->resize(1000, 1000);
-    viewWindow->setWindowTitle("VFRenderingWidgetExample");
-    viewWindow->show();
+    viewerInstance *vInst = new viewerInstance(h5Name, currTInd, currHInd);
 
     this->close();
 }

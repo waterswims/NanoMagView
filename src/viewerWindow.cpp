@@ -11,10 +11,15 @@
 #include <VFRendering/CombinedRenderer.hxx>
 
 nMagWindows::viewerWindow::viewerWindow(std::vector<double> slice_pos_in,
+    const bool arrowOn,
+    const bool allArrow,
+    const std::vector<int> slices,
+    const bool isoOn,
+    const double isoVal,
     QWidget *parent) : QOpenGLWidget(parent)
 {
     slice_pos = slice_pos_in;
-    this->set_renderers(true, false, {0, 20, 39}, true, 0);
+    this->set_renderers(arrowOn, allArrow, slices, isoOn, isoVal);
 }
 
 nMagWindows::viewerWindow::~viewerWindow()
@@ -104,8 +109,6 @@ void nMagWindows::viewerWindow::set_renderers(const bool arrowOn,
         return direction.z;
     });
     isosurface_renderer_ptr->setOption<VFRendering::IsosurfaceRenderer::Option::ISOVALUE>(isoVal);
-    std::vector<std::shared_ptr<VFRendering::RendererBase>> renderers = {arrow_renderer_ptr, isosurface_renderer_ptr};
-    arrow_view.renderers({{std::make_shared<VFRendering::CombinedRenderer>(arrow_view, renderers), {{0, 0, 1, 1}}}});
     if(arrowOn)
     {
         if(!allArrow)
@@ -129,14 +132,24 @@ void nMagWindows::viewerWindow::set_renderers(const bool arrowOn,
             funcString = funcStream.str();
             arrow_renderer_ptr->setOption<VFRendering::View::Option::IS_VISIBLE_IMPLEMENTATION>(funcString);
         }
+        else
+        {
+            arrow_renderer_ptr->setOption<VFRendering::View::Option::IS_VISIBLE_IMPLEMENTATION>("bool is_visible(vec3 position, vec3 direction) { return true; }");
+        }
     }
     else
     {
         arrow_renderer_ptr->setOption<VFRendering::View::Option::IS_VISIBLE_IMPLEMENTATION>("bool is_visible(vec3 position, vec3 direction) { return false; }");
     }
 
-    if(!isoOn)
+    if(isoOn)
+    {
+        isosurface_renderer_ptr->setOption<VFRendering::View::Option::IS_VISIBLE_IMPLEMENTATION>("bool is_visible(vec3 position, vec3 direction) { return true; }");
+    }
+    else
     {
         isosurface_renderer_ptr->setOption<VFRendering::View::Option::IS_VISIBLE_IMPLEMENTATION>("bool is_visible(vec3 position, vec3 direction) { return false; }");
     }
+    std::vector<std::shared_ptr<VFRendering::RendererBase>> renderers = {arrow_renderer_ptr, isosurface_renderer_ptr};
+    arrow_view.renderers({{std::make_shared<VFRendering::CombinedRenderer>(arrow_view, renderers), {{0, 0, 1, 1}}}});
 }

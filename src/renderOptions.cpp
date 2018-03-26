@@ -30,16 +30,18 @@ nMagWindows::renderOptionsWindow::renderOptionsWindow()
     // Create Update Box
     updateButton = new QPushButton("Update", this);
     updateButton->setGeometry(50, 170, 150, 50);
-    QObject::connect(updateButton, SIGNAL (clicked()), this, SLOT (updateHit()));
+    QObject::connect(updateButton, SIGNAL (clicked()), this,
+        SLOT (updateHit()));
 }
 
 void nMagWindows::renderOptionsWindow::updateHit()
 {
     bool arrowBool = arrowCheck->isChecked();
     bool isoBool = isoCheck->isChecked();
+    bool allBool = allCheck->isChecked();
 
     std::vector<int> slices;
-    if(arrowBool)
+    if(arrowBool && !allBool)
     {
         QString sliceString = sliceChoiceText->text();
         std::string stdSliceString = sliceString.toLocal8Bit().constData();
@@ -51,12 +53,12 @@ void nMagWindows::renderOptionsWindow::updateHit()
         }
     }
 
-    double isoVal;
+    double isoVal=0;
     if(isoBool)
     {
         QString isoString = isoValText->text();
         isoVal = isoString.toDouble();
     }
 
-    emit sendUpdate(arrowBool, slices, isoBool, isoVal);
+    emit sendUpdate(arrowBool, allBool, slices, isoBool, isoVal);
 }

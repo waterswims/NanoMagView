@@ -20,7 +20,13 @@ namespace nMagWindows
     Q_OBJECT
 
     public:
-        viewerWindow(std::vector<double> slice_pos_in, QWidget *parent=nullptr);
+        viewerWindow(std::vector<double> slice_pos_in,
+            const bool arrowOn,
+            const bool allArrow,
+            const std::vector<int> slices,
+            const bool isoOn,
+            const double isoVal,
+            QWidget *parent=nullptr);
         virtual ~viewerWindow();
         void update(const VFRendering::Geometry& geometry,
             const std::vector<glm::vec3>& vectors);
